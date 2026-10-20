@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stray Kids - Everywhere All Around The World</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Anime.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+TC:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        skzRed: '#E60012',
+                        skzDarkRed: '#8B0000',
+                        skzBlack: '#0B0B0B',
+                        skzGray: '#1A1A1A',
+                        skzCard: '#141414',
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        noto: ['Noto Sans TC', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0B0B0B;
+            color: #FFFFFF;
+            font-family: 'Noto Sans TC', 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .red-glow {
+            text-shadow: 0 0 15px rgba(230, 0, 18, 0.7);
+        }
+
+        .red-glow-box {
+            box-shadow: 0 0 20px rgba(230, 0, 18, 0.3);
+        }
+
+        .red-glow-box:hover {
+            box-shadow: 0 0 30px rgba(230, 0, 18, 0.6);
+        }
+
+        /* Gradient overlay */
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(11,11,11,0.4) 0%, rgba(11,11,11,1) 95%);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0B0B0B;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E60012;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-skzBlack/90 backdrop-blur-md border-b border-skzRed/20 px-6 py-4 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-montserrat text-2xl font-black tracking-wider text-white">
+                STRAY <span class="text-skzRed">KIDS</span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-montserrat font-bold text-sm tracking-widest uppercase">
+                <a href="#about" class="hover:text-skzRed transition-colors">關於</a>
+                <a href="#members" class="hover:text-skzRed transition-colors">成員</a>
+                <a href="#timeline" class="hover:text-skzRed transition-colors">事蹟</a>
+                <a href="#awards" class="hover:text-skzRed transition-colors">獎項成就</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-skzDarkRed/30 via-skzBlack to-skzBlack">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <div class="absolute top-1/4 left-10 w-72 h-72 bg-skzRed rounded-full filter blur-[100px]"></div>
+            <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-skzDarkRed rounded-full filter blur-[120px]"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <span class="hero-subtext block font-montserrat text-skzRed font-bold tracking-[0.3em] uppercase text-sm md:text-base mb-3 opacity-0">
+                You Make Stray Kids Stay
+            </span>
+            <h1 class="hero-title font-montserrat text-5xl md:text-8xl font-black tracking-tight mb-6 red-glow opacity-0">
+                STRAY KIDS
+            </h1>
+            <p class="hero-desc text-gray-300 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-10 opacity-0">
+                由 JYP 娛樂於 2018 年推出的韓國自主製作型男子團體。<br>以強烈的音樂風格「麻辣味（Malataste）」與不設限的創作力撕下標籤、打破常規！
+            </p>
+            <div class="hero-btn opacity-0">
+                <a href="#members" class="inline-block bg-skzRed hover:bg-red-700 text-white font-bold px-8 py-3 rounded-full tracking-wider transition-all transform hover:scale-105 shadow-lg shadow-skzRed/50">
+                    探索成員資料 <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: About / Concept -->
+    <section id="about" class="py-20 px-6 bg-skzGray/50 relative border-t border-b border-skzRed/10">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="reveal-el">
+                <span class="text-skzRed font-montserrat font-bold tracking-widest text-sm uppercase">Group Identity</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2 mb-6">不被框架束縛的「自主製作偶像」</h2>
+                <p class="text-gray-300 leading-relaxed mb-4">
+                    Stray Kids 的隊名意為「迷路的孩子」，代表著打破常規、尋找屬於自己音樂道路的決心。團隊最大特色為擁有內部創作隊伍 <strong>3RACHA</strong>（方燦、彰彬、HAN），絕大多數歌曲皆由成員親自作詞、作曲及製作。
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    從衝擊力十足的〈God's Menu〉、〈S-Class〉到〈LALALALA〉，他們獨樹一幟的音樂風格被媒體稱為「麻辣味音樂」，在全球 K-POP 樂壇奠定了不可替代的地位。
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4 reveal-el">
+                <div class="bg-skzCard p-6 rounded-lg border border-skzRed/20 text-center">
+                    <i class="fa-solid fa-compact-disc text-3xl text-skzRed mb-3"></i>
+                    <h3 class="font-bold text-xl mb-1">Self-Producing</h3>
+                    <p class="text-xs text-gray-400">自主作詞作曲團隊 3RACHA</p>
+                </div>
+                <div class="bg-skzCard p-6 rounded-lg border border-skzRed/20 text-center">
+                    <i class="fa-solid fa-globe text-3xl text-skzRed mb-3"></i>
+                    <h3 class="font-bold text-xl mb-1">Global Impact</h3>
+                    <p class="text-xs text-gray-400">Billboard 200 多次奪冠</p>
+                </div>
+                <div class="bg-skzCard p-6 rounded-lg border border-skzRed/20 text-center">
+                    <i class="fa-solid fa-[#F00] fa-fire text-3xl text-skzRed mb-3"></i>
+                    <h3 class="font-bold text-xl mb-1">Mala Taste</h3>
+                    <p class="text-xs text-gray-400">獨創麻辣味視覺與聽覺</p>
+                </div>
+                <div class="bg-skzCard p-6 rounded-lg border border-skzRed/20 text-center">
+                    <i class="fa-solid fa-users text-3xl text-skzRed mb-3"></i>
+                    <h3 class="font-bold text-xl mb-1">STAY</h3>
+                    <p class="text-xs text-gray-400">全球廣大粉絲陣營</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Members -->
+    <section id="members" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-skzRed font-montserrat font-bold tracking-widest text-sm uppercase">Profiles</span>
+            <h2 class="text-4xl font-black mt-2 tracking-tight">8 位核心成員</h2>
+            <p class="text-gray-400 mt-2 text-sm">滑鼠懸停於卡片上可展現動態卡片效果</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="member-card bg-skzCard rounded-xl overflow-hidden border border-skzRed/20 transition-all cursor-pointer group hover:border-skzRed">
+                <div class="h-72 bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" 
+                         alt="Bang Chan" 
+                         class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center bg-zinc-800 text-zinc-500\'><i class=\'fa-solid fa-user text-6xl\'></i></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-skzCard via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 text-xs bg-skzRed text-white font-bold px-2 py-1 rounded shadow">3RACHA</span>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold font-montserrat">Bang Chan (方燦)</h3>
+                    <p class="text-skzRed text-sm font-medium mb-2">隊長 / 製作人 / Vocal / Rapper</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">隊內的精神支柱與全能核心，負責團體歌曲的主要製作與統籌。</p>
+                </div>
+            </div>
+
+            <div class="member-card bg-skzCard rounded-xl overflow-hidden border border-skzRed/20 transition-all cursor-pointer group hover:border-skzRed">
+                <div class="h-72 bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" 
+                         alt="Lee Know" 
+                         class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center bg-zinc-800 text-zinc-500\'><i class=\'fa-solid fa-user text-6xl\'></i></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-skzCard via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 text-xs bg-zinc-700 text-white font-bold px-2 py-1 rounded shadow">Dance Racha</span>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold font-montserrat">Lee Know (李旻浩)</h3>
+                    <p class="text-skzRed text-sm font-medium mb-2">Dance Leader / Vocal / Rapper</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">舞蹈隊長，擁有極高水準的舞蹈實力與俐落的視覺舞台表現。</p>
+                </div>
+            </div>
+
+            <div class="member-card bg-skzCard rounded-xl overflow-hidden border border-skzRed/20 transition-all cursor-pointer group hover:border-skzRed">
+                <div class="h-72 bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" 
+                         alt="Changbin" 
+                         class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center bg-zinc-800 text-zinc-500\'><i class=\'fa-solid fa-user text-6xl\'></i></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-skzCard via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 text-xs bg-skzRed text-white font-bold px-2 py-1 rounded shadow">3RACHA</span>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold font-montserrat">Changbin (徐彰彬)</h3>
+                    <p class="text-skzRed text-sm font-medium mb-2">Main Rapper / 製作人</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">以強勁無比的 Rap 節奏感與饒舌發音著稱，3RACHA 核心成員。</p>
+                </div>
+            </div>
+
+            <div class="member-card bg-skzCard rounded-xl overflow-hidden border border-skzRed/20 transition-all cursor-pointer group hover:border-skzRed">
+                <div class="h-72 bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=600&q=80" 
+                         alt="Hyunjin" 
+                         class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center bg-zinc-800 text-zinc-500\'><i class=\'fa-solid fa-user text-6xl\'></i></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-skzCard via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 text-xs bg-zinc-700 text-white font-bold px-2 py-1 rounded shadow">Dance Racha</span>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold font-montserrat">Hyunjin (黃鉉辰)</h3>
+                    <p class="text-skzRed text-sm font-medium mb-2">Main Dancer / Rapper / 視覺</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">舞台表現力極具吸引力，動作優雅且富有戲劇張力。</p>
+                </div>
+            </div>
+
+            <div class="member-card bg-skzCard rounded-xl overflow-hidden border border-skzRed/20 transition-all cursor-pointer group hover:border-skzRed">
+                <div class="h-72 bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" 
+                         alt="HAN" 
+                         class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center bg-zinc-800 text-zinc-500\'><i class=\'fa-solid fa-user text-6xl\'></i></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-skzCard via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 text-xs bg-skzRed text-white font-bold px-2 py-1 rounded shadow">3RACHA</span>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold font-montserrat">HAN (韓知城)</h3>
+                    <p class="text-skzRed text-sm font-medium mb-2">Main Rapper / Vocal / 製作人</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">全能王，具備快速獨特的 Rapid Rap 以及感染力極強的高音 Vocal。</p>
+                </div>
+            </div>
+
+            <div class="member-card bg-skzCard rounded-xl overflow-hidden border border-skzRed/20 transition-all cursor-pointer group hover:border-skzRed">
+                <div class="h-72 bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" 
+                         alt="Felix" 
+                         class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center bg-zinc-800 text-zinc-500\'><i class=\'fa-solid fa-user text-6xl\'></i></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-skzCard via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 text-xs bg-zinc-700 text-white font-bold px-2 py-1 rounded shadow">Dance Racha</span>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold font-montserrat">Felix (李龍馥)</h3>
+                    <p class="text-skzRed text-sm font-medium mb-2">Dancer / Rapper (Cave Voice)</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">標誌性的低沉低音砲（Cave Voice），為 SKZ 音樂帶來招牌標籤。</p>
+                </div>
+            </div>
+
+            <div class="member-card bg-skzCard rounded-xl overflow-hidden border border-skzRed/20 transition-all cursor-pointer group hover:border-skzRed">
+                <div class="h-72 bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80" 
+                         alt="Seungmin" 
+                         class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center bg-zinc-800 text-zinc-500\'><i class=\'fa-solid fa-user text-6xl\'></i></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-skzCard via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 text-xs bg-zinc-700 text-white font-bold px-2 py-1 rounded shadow">Vocal Racha</span>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold font-montserrat">Seungmin (金昇玟)</h3>
+                    <p class="text-skzRed text-sm font-medium mb-2">Main Vocal</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">團隊的主唱大樑，擁有極其紮實穩健且音色清澈的歌唱技巧。</p>
+                </div>
+            </div>
+
+            <div class="member-card bg-skzCard rounded-xl overflow-hidden border border-skzRed/20 transition-all cursor-pointer group hover:border-skzRed">
+                <div class="h-72 bg-zinc-800 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=600&q=80" 
+                         alt="I.N" 
+                         class="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'h-full flex items-center justify-center bg-zinc-800 text-zinc-500\'><i class=\'fa-solid fa-user text-6xl\'></i></div>'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-skzCard via-transparent to-transparent"></div>
+                    <span class="absolute top-3 right-3 text-xs bg-zinc-700 text-white font-bold px-2 py-1 rounded shadow">Vocal Racha</span>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-bold font-montserrat">I.N (梁精寅)</h3>
+                    <p class="text-skzRed text-sm font-medium mb-2">Vocal / 忙內 (Maknae)</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">團隊中最小的成員，聲音辨識度高且展現出豐富不斷進步的歌唱力。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Interactive Timeline -->
+    <section id="timeline" class="py-20 px-6 bg-skzGray/30 relative border-t border-skzRed/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16 reveal-el">
+                <span class="text-skzRed font-montserrat font-bold tracking-widest text-sm uppercase">History</span>
+                <h2 class="text-4xl font-black mt-2">發展事蹟時間軸</h2>
+                <p class="text-gray-400 text-sm mt-2">點擊下方年份按鈕查看對應事件</p>
+            </div>
+
+            <!-- Year Buttons -->
+            <div class="flex justify-center space-x-2 md:space-x-4 mb-12 flex-wrap gap-y-2">
+                <button onclick="switchTimeline(2017)" class="tl-btn bg-skzRed text-white font-bold px-5 py-2 rounded-full text-sm transition-all shadow-md">2017</button>
+                <button onclick="switchTimeline(2018)" class="tl-btn bg-skzCard hover:bg-skzRed/80 text-white font-bold px-5 py-2 rounded-full text-sm transition-all border border-skzRed/30">2018</button>
+                <button onclick="switchTimeline(2020)" class="tl-btn bg-skzCard hover:bg-skzRed/80 text-white font-bold px-5 py-2 rounded-full text-sm transition-all border border-skzRed/30">2020</button>
+                <button onclick="switchTimeline(2021)" class="tl-btn bg-skzCard hover:bg-skzRed/80 text-white font-bold px-5 py-2 rounded-full text-sm transition-all border border-skzRed/30">2021</button>
+                <button onclick="switchTimeline(2022)" class="tl-btn bg-skzCard hover:bg-skzRed/80 text-white font-bold px-5 py-2 rounded-full text-sm transition-all border border-skzRed/30">2022-2024</button>
+            </div>
+
+            <!-- Timeline Content Display Area -->
+            <div id="timeline-card" class="bg-skzCard p-8 rounded-2xl border border-skzRed/40 max-w-2xl mx-auto relative min-h-[180px] flex flex-col justify-center red-glow-box transition-all">
+                <div id="tl-content">
+                    <span id="tl-year" class="text-skzRed font-black text-3xl font-montserrat block mb-2">2017</span>
+                    <h3 id="tl-title" class="text-xl font-bold mb-3">生存實境節目《Stray Kids》開播</h3>
+                    <p id="tl-desc" class="text-gray-300 text-sm leading-relaxed">
+                        由 JYP 娛樂籌備的團體出道生存節目，成員以「全員出道」為共同目標進行任務，展現極高自主創作與團隊凝聚力。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Major Achievements & Awards -->
+    <section id="awards" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal-el">
+            <span class="text-skzRed font-montserrat font-bold tracking-widest text-sm uppercase">Achievements</span>
+            <h2 class="text-4xl font-black mt-2">重大紀錄與獎項</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="reveal-el bg-skzCard p-8 rounded-xl border-l-4 border-skzRed">
+                <i class="fa-solid fa-trophy text-skzRed text-3xl mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Billboard 200 五連冠</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    自《ODDINARY》、《MAXIDENT》、《5-STAR》、《ROCK-STAR》至《ATE》，連續多次登場即空降美國 Billboard 200 專輯榜第一名！
+                </p>
+            </div>
+
+            <div class="reveal-el bg-skzCard p-8 rounded-xl border-l-4 border-skzRed">
+                <i class="fa-solid fa-award text-skzRed text-3xl mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">Kingdom 總冠軍</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    2021 年參加 Mnet 競演節目《Kingdom: Legendary War》，憑藉震撼力十足的舞台編排與編曲實力，奪得最終總冠軍。
+                </p>
+            </div>
+
+            <div class="reveal-el bg-skzCard p-8 rounded-xl border-l-4 border-skzRed">
+                <i class="fa-solid fa-globe text-skzRed text-3xl mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">VMA 最佳 K-POP 獎</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    榮獲美國 MTV Video Music Awards (VMA) 最佳 K-Pop 獎項，並登上首爾及全球大型體育場進行世巡演唱會。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-skzBlack py-8 text-center text-xs text-gray-500 border-t border-skzRed/20">
+        <p class="font-montserrat mb-1">STRAY KIDS FAN PROMOTION WEBSITE</p>
+        <p>You Make Stray Kids Stay © 2026</p>
+    </footer>
+
+    <!-- Anime.js Integration Scripts -->
+    <script>
+        // Timeline Data Object
+        const timelineData = {
+            2017: {
+                year: "2017",
+                title: "生存實境節目《Stray Kids》開播",
+                desc: "由 JYP 娛樂籌備的團體出道生存節目，成員以「全員出道」為目標，展現極高自主創作與團隊凝聚力。"
+            },
+            2018: {
+                year: "2018",
+                title: "正式出道 & 掃括新人獎",
+                desc: "發行首張迷你專輯《I am NOT》正式出道，並橫掃各大音樂頒獎典禮年度新人獎（Rookie of the Year）。"
+            },
+            2020: {
+                year: "2020",
+                title: "〈God's Menu〉開啟麻辣味盛世",
+                desc: "發行首張正規專輯《GO生》，主打歌〈God's Menu〉以神廚概念爆紅，點閱迅速突破億次，確立了不可替代的風格。"
+            },
+            2021: {
+                year: "2021",
+                title: "Kingdom 奪冠 & 首張百萬銷量專輯",
+                desc: "奪下 Mnet《Kingdom》總冠軍，並發行第二張正規專輯《NOEASY》，成為 JYP 娛樂首張百萬銷量專輯。"
+            },
+            2022: {
+                year: "2022 - 2024",
+                title: "登頂 Billboard & 世巡體育場",
+                desc: "從《ODDINARY》開始連續多張專輯空降 Billboard 200 冠軍，登上全球大型體育場進行世巡，締造無數 K-Pop 紀錄。"
+            }
+        };
+
+        // 1. Anime.js: Hero Title & Intro Animations on Load
+        document.addEventListener('DOMContentLoaded', () => {
+            anime.timeline({
+                easing: 'easeOutExpo',
+            })
+            .add({
+                targets: '.hero-subtext',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 800,
+            })
+            .add({
+                targets: '.hero-title',
+                opacity: [0, 1],
+                scale: [0.8, 1],
+                duration: 1000,
+            }, '-=400')
+            .add({
+                targets: '.hero-desc',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 800,
+            }, '-=600')
+            .add({
+                targets: '.hero-btn',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                duration: 800,
+            }, '-=600');
+
+            // 2. Anime.js: Card Hover Animation Setup
+            const cards = document.querySelectorAll('.member-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    anime({
+                        targets: card,
+                        translateY: -10,
+                        scale: 1.02,
+                        duration: 300,
+                        easing: 'easeOutQuad'
+                    });
+                });
+                card.addEventListener('mouseleave', () => {
+                    anime({
+                        targets: card,
+                        translateY: 0,
+                        scale: 1.0,
+                        duration: 300,
+                        easing: 'easeOutQuad'
+                    });
+                });
+            });
+
+            // Intersection Observer for Scroll Reveal
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        anime({
+                            targets: entry.target,
+                            opacity: [0, 1],
+                            translateY: [40, 0],
+                            duration: 800,
+                            easing: 'easeOutCubic'
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.reveal-el, .member-card').forEach(el => {
+                el.style.opacity = '0';
+                observer.observe(el);
+            });
+        });
+
+        // 3. Anime.js: Interactive Timeline Switch Animation
+        function switchTimeline(year) {
+            const data = timelineData[year];
+            const contentBox = document.getElementById('tl-content');
+
+            // Animate Out
+            anime({
+                targets: contentBox,
+                opacity: [1, 0],
+                translateY: [0, -15],
+                duration: 250,
+                easing: 'easeInQuad',
+                complete: () => {
+                    // Update Text
+                    document.getElementById('tl-year').innerText = data.year;
+                    document.getElementById('tl-title').innerText = data.title;
+                    document.getElementById('tl-desc').innerText = data.desc;
+
+                    // Animate In
+                    anime({
+                        targets: contentBox,
+                        opacity: [0, 1],
+                        translateY: [15, 0],
+                        duration: 350,
+                        easing: 'easeOutQuad'
+                    });
+                }
+            });
+
+            // Update active button styles
+            const buttons = document.querySelectorAll('.tl-btn');
+            buttons.forEach(btn => {
+                if (btn.innerText.includes(year.toString())) {
+                    btn.classList.remove('bg-skzCard');
+                    btn.classList.add('bg-skzRed');
+                } else {
+                    btn.classList.remove('bg-skzRed');
+                    btn.classList.add('bg-skzCard');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
